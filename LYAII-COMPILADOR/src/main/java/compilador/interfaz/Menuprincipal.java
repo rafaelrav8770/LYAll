@@ -41,7 +41,7 @@ public class Menuprincipal {
         Button salir = crearBoton("Salir", Platform::exit);
         salir.getStyleClass().add("boton-salir");
 
-        VBox botones = new VBox(12, tema1, tema2, tema3, tema4, salir);
+        VBox botones = new VBox(12, tema1, tema2, tema3,tema4,  salir);
         botones.setFillWidth(true);
         VBox.setVgrow(botones, Priority.ALWAYS);
 

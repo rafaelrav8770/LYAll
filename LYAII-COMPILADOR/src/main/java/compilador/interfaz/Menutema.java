@@ -13,6 +13,14 @@ import compilador.TEMA2.Notaciones;
 import compilador.TEMA2.Representaciones;
 import compilador.TEMA2.GeneracionIntermedia;
 
+import compilador.TEMA3.OptimizacionLocal;
+import compilador.TEMA3.OptimizacionCiclos;
+import compilador.TEMA3.OptimizacionGlobal;
+import compilador.TEMA3.OptimizacionMirilla;
+import compilador.TEMA3.AnalisisCostos;
+import compilador.TEMA3.CriteriosMejora;
+import compilador.TEMA3.AnalisisFlujoDatos;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -80,6 +88,7 @@ public class Menutema {
                 agregar("7. Tabla de direcciones", "direcciones");
                 agregar("8. Manejo de errores semánticos", "errores");
             }
+
             case 2 -> {
                 agregar("1. Notaciones: prefija, infija y postfija", "notaciones");
                 agregar("2. Representaciones: Polaca, Código P, Triplos y Cuádruplos", "representaciones");
@@ -95,6 +104,7 @@ public class Menutema {
                 agregar("6. Criterios para mejorar el código", "criterios");
                 agregar("7. Análisis del flujo de datos", "flujo");
             }
+
             case 4 -> {
                 agregar("1. Registros", "registros");
                 agregar("2. Lenguaje ensamblador", "ensamblador");
@@ -114,6 +124,7 @@ public class Menutema {
     }
 
     private void abrirModulo(String modulo) {
+
         if (tema == 1) {
             switch (modulo) {
                 case "arbol" -> new ArbolExpresiones(stage, this::mostrar).mostrar();
@@ -127,6 +138,7 @@ public class Menutema {
             }
             return;
         }
+
         if (tema == 2) {
             switch (modulo) {
                 case "notaciones" -> new Notaciones(stage, this::mostrar).mostrar();
@@ -135,10 +147,24 @@ public class Menutema {
             }
             return;
         }
+
+        if (tema == 3) {
+            switch (modulo) {
+                case "local" -> new OptimizacionLocal(stage, this::mostrar).mostrar();
+                case "ciclos" -> new OptimizacionCiclos(stage, this::mostrar).mostrar();
+                case "global" -> new OptimizacionGlobal(stage, this::mostrar).mostrar();
+                case "mirilla" -> new OptimizacionMirilla(stage, this::mostrar).mostrar();
+                case "costos" -> new AnalisisCostos(stage, this::mostrar).mostrar();
+                case "criterios" -> new CriteriosMejora(stage, this::mostrar).mostrar();
+                case "flujo" -> new AnalisisFlujoDatos(stage, this::mostrar).mostrar();
+            }
+            return;
+        }
+
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Módulo");
         alerta.setHeaderText(null);
-        alerta.setContentText("Este modulo falta  .");
+        alerta.setContentText("Este módulo aún no está programado.");
         alerta.initOwner(stage);
         alerta.showAndWait();
     }

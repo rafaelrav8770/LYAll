@@ -42,8 +42,8 @@ public class Notaciones {
 
             salida.setText(
                     "INFIJA:\n" + expresion +
-                            "\n\nPOSTFIJA:\n" + postfija(expresion) +
-                            "\n\nPREFIJA:\n" + prefija(expresion)
+                            "\nPOSTFIJA:\n" + postfija(expresion) +
+                            "\nPREFIJA:\n" + prefija(expresion)
             );
         });
 
