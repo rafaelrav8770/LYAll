@@ -21,6 +21,11 @@ import compilador.TEMA3.AnalisisCostos;
 import compilador.TEMA3.CriteriosMejora;
 import compilador.TEMA3.AnalisisFlujoDatos;
 
+import compilador.TEMA4.registros;
+import compilador.TEMA4.Ensamblador;
+import compilador.TEMA4.Maquina;
+import compilador.TEMA4.Memoria;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -160,6 +165,15 @@ public class Menutema {
             }
             return;
         }
+            if (tema == 4) {
+                switch (modulo) {
+                    case "registros" -> new registros(stage, this::mostrar).mostrar();
+                    case "ensamblador" -> new Ensamblador(stage, this::mostrar).mostrar();
+                    case "maquina" -> new Maquina(stage, this::mostrar).mostrar();
+                    case "memoria" -> new Memoria(stage, this::mostrar).mostrar();
+                }
+            return;
+        }
 
         Alert alerta = new Alert(Alert.AlertType.INFORMATION);
         alerta.setTitle("Módulo");
@@ -178,6 +192,7 @@ public class Menutema {
             default -> "TEMA";
         };
     }
+
 
     private void aplicarCss(Scene scene) {
         var recurso = getClass().getResource("/styles.css");
