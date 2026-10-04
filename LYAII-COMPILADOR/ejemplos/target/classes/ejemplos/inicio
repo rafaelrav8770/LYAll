@@ -1,0 +1,14 @@
+class Entradas {
+    public static void main() {
+        int invitados = 24;
+        int mesas = 6;
+        int porMesa = invitados / mesas;
+        double precio = 12.50;
+        double total = invitados * precio;
+        String mensaje = "Entradas confirmadas";
+
+        print(mensaje);
+        print(porMesa);
+        print(total);
+    }
+}
