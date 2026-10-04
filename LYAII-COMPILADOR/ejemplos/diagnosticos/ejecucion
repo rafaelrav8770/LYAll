@@ -1,0 +1,6 @@
+class Division {
+    public static void main() {
+        int divisor = 0;
+        print(10 / divisor);
+    }
+}
