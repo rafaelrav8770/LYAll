@@ -1,0 +1,16 @@
+class Acumulado {
+    public static void main(String[] args) {
+        int paso = 1;
+        int total = 0;
+        while (paso <= 5) {
+            total = total + paso;
+            paso = paso + 1;
+        }
+        if (total == 15) {
+            print("Resultado correcto");
+        } else {
+            print("Revisar resultado");
+        }
+        print(total);
+    }
+}
