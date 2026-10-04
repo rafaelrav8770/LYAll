@@ -1,6 +1,0 @@
-class Diagnostico {
-    public static void main() {
-        int cantidad = 3;
-        print(cantidad;
-    }
-}
